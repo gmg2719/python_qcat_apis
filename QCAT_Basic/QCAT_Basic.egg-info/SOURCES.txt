@@ -1,0 +1,8 @@
+README.md
+setup.py
+QCAT_Basic/QCAT_Basic.py
+QCAT_Basic/__init__.py
+QCAT_Basic.egg-info/PKG-INFO
+QCAT_Basic.egg-info/SOURCES.txt
+QCAT_Basic.egg-info/dependency_links.txt
+QCAT_Basic.egg-info/top_level.txt
