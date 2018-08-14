@@ -13,8 +13,6 @@ import re,datetime
 from os.path import abspath, exists
 import time
 
-
-
 # great module to draw Visible output
 # https://plot.ly/python/getting-started/
 import plotly
@@ -231,12 +229,12 @@ def qcat_parse_per_log_package(logpath, filterID, filterStr, parsedFile):
             currentLogPackageID = myLogPackage.Type
             #logger1.debug("%x",currentLogPackageID)
             #logger1.debug("%s", myLogPackage.TimestampAsString)
-            if ( currentLogPackageID == filterID) and ("UECapabilityInformation" in myLogPackage.Text) :
+            if ( currentLogPackageID == filterID) and (filterStr in myLogPackage.Text) :
                 fparseFile = open(parsedFile,"a")
                 fparseFile.write(myLogPackage.Text)
                 fparseFile.close()
 
-                logger1.debug("%s", myLogPackage.GetField(".ueCapabilityRAT-Container"))
+                logger1.debug("%s", myLogPackage.GetField(filterStr))
 
             if myLogPackage.Next() == False:
                 break
